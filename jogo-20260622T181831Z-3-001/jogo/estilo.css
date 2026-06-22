@@ -1,0 +1,200 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    overflow:hidden;
+    background:#87CEEB;
+}
+
+.info{
+    position:absolute;
+    top:10px;
+    left:10px;
+    z-index:100;
+
+    color:white;
+    font-family:Arial, Helvetica, sans-serif;
+
+    text-shadow:2px 2px 4px black;
+}
+
+.game{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+}
+
+.cenario{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+}
+
+.pikachu{
+    position:absolute;
+    width:80px;
+    left:50px;
+    bottom:20px;
+}
+
+.bola{
+    position:absolute;
+    width:50px;
+    bottom:20px;
+    right:-60px;
+
+    animation: bolaAnimada 1.8s infinite linear;
+}
+
+.raio{
+    position:absolute;
+    width:40px;
+
+    bottom:130px;
+    right:-50px;
+
+    animation: raioAnimado 4s infinite linear;
+}
+
+@keyframes bolaAnimada{
+
+    from{
+        right:-60px;
+    }
+
+    to{
+        right:100%;
+    }
+
+}
+
+@keyframes raioAnimado{
+
+    from{
+        right:-50px;
+    }
+
+    to{
+        right:100%;
+    }
+
+}
+
+@keyframes pular{
+
+    0%{
+        bottom:20px;
+    }
+
+    40%{
+        bottom:150px;
+    }
+
+    50%{
+        bottom:150px;
+    }
+
+    60%{
+        bottom:150px;
+    }
+
+    100%{
+        bottom:20px;
+    }
+
+}
+
+.pulo{
+    animation:pular 500ms ease-out;
+}
+
+.game-over{
+
+    visibility:hidden;
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.7);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.painel{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    text-align:center;
+}
+
+.reiniciar{
+
+    margin-top:15px;
+
+    width:220px;
+    height:60px;
+
+    border:none;
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:20px;
+    font-weight:bold;
+}
+
+@media(max-width:768px){
+
+    .pikachu{
+        width:60px;
+    }
+
+    .bola{
+        width:40px;
+    }
+
+    .raio{
+        width:30px;
+    }
+
+    @keyframes pular{
+
+        0%{
+            bottom:20px;
+        }
+
+        40%{
+            bottom:100px;
+        }
+
+        50%{
+            bottom:100px;
+        }
+
+        60%{
+            bottom:100px;
+        }
+
+        100%{
+            bottom:20px;
+        }
+
+    }
+
+}
